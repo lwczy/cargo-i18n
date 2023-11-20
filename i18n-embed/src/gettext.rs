@@ -90,10 +90,10 @@ impl LanguageLoader for GettextLanguageLoader {
             .get(0)
             .ok_or(I18nEmbedError::RequestedLanguagesEmpty)?;
 
-        if language_id == self.fallback_language() {
-            self.load_src_language();
-            return Ok(());
-        }
+        // if language_id == self.fallback_language() {
+        //     self.load_src_language();
+        //     return Ok(());
+        // }
 
         let (_path, file) = match self.language_file(language_id, i18n_assets) {
             (path, Some(f)) => (path, f),
